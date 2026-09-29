@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Homework - Learn & Play</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+
+        <h1>🌟 Learn & Play</h1>
+
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="games.html">Games</a>
+            <a href="#" id="logoutButton">Logout</a>
+        </nav>
+
+    </header>
+
+
+    <!-- Homework Page -->
+    <main class="homework-page">
+
+        <!-- Introduction -->
+        <section class="homework-intro">
+
+            <h2>📚 Homework Helper</h2>
+
+            <p>
+                Ask a question or upload your homework and
+                get help from AI! 🤖
+            </p>
+
+        </section>
+
+
+        <!-- AI SEARCH -->
+        <section class="homework-card">
+
+            <div class="homework-icon">
+                🤖
+            </div>
+
+            <h2>Ask AI</h2>
+
+            <p>
+                Type your homework question below.
+            </p>
+
+
+            <div class="ai-search">
+
+                <textarea
+                    id="homeworkQuestion"
+                    placeholder="Example: What is photosynthesis?"
+                    rows="4">
+                </textarea>
+
+
+                <button
+                    type="button"
+                    id="askAIButton">
+
+                    🔍 SEARCH
+
+                </button>
+
+            </div>
+
+
+            <!-- AI Answer -->
+            <div
+                id="aiAnswer"
+                class="ai-answer">
+
+                <h3>🤖 AI Answer</h3>
+
+                <p>
+                    Your answer will appear here.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- UPLOAD SECTION -->
+        <section class="upload-container">
+
+
+            <!-- Pictures -->
+            <div class="homework-card upload-card">
+
+                <div class="homework-icon">
+                    📷
+                </div>
+
+                <h2>Upload Pictures</h2>
+
+                <p>
+                    Upload pictures of your homework
+                    and ask AI for help.
+                </p>
+
+
+                <div class="upload-limit">
+
+                    📷 Pictures today:
+
+                    <strong id="pictureCount">
+                        0 / 5
+                    </strong>
+
+                </div>
+
+
+                <input
+                    type="file"
+                    id="pictureUpload"
+                    accept="image/*"
+                    multiple
+                    hidden>
+
+
+                <button
+                    type="button"
+                    class="upload-button"
+                    id="pictureButton">
+
+                    📷 Upload Pictures
+
+                </button>
+
+
+                <div
+                    id="picturePreview"
+                    class="file-preview">
+                </div>
+
+            </div>
+
+
+
+            <!-- PDF -->
+            <div class="homework-card upload-card">
+
+                <div class="homework-icon">
+                    📄
+                </div>
+
+                <h2>Upload PDF</h2>
+
+                <p>
+                    Upload your homework PDF and
+                    ask AI for help.
+                </p>
+
+
+                <div class="upload-limit">
+
+                    📄 PDFs today:
+
+                    <strong id="pdfCount">
+                        0 / 5
+                    </strong>
+
+                </div>
+
+
+                <input
+                    type="file"
+                    id="pdfUpload"
+                    accept=".pdf,application/pdf"
+                    multiple
+                    hidden>
+
+
+                <button
+                    type="button"
+                    class="upload-button"
+                    id="pdfButton">
+
+                    📄 Upload PDF
+
+                </button>
+
+
+                <div
+                    id="pdfPreview"
+                    class="file-preview">
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Helpful Message -->
+        <section class="homework-tip">
+
+            <h3>💡 Homework Tip</h3>
+
+            <p>
+                Try to understand the explanation instead
+                of only copying the answer. Learning is
+                more important than just getting the answer! 🌟
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1360 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f7ff;
+    color: #333;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 50px;
+
+    background-color: white;
+}
+
+header h1 {
+    font-size: 28px;
+}
+
+nav a {
+    text-decoration: none;
+    margin-left: 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h2 {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.button {
+    display: inline-block;
+
+    padding: 15px 30px;
+
+    background-color: #6c63ff;
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 10px;
+
+    font-weight: bold;
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+
+    padding: 40px;
+}
+
+.feature {
+    background-color: white;
+
+    width: 250px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    border-radius: 15px;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.feature h3 {
+    margin-bottom: 15px;
+}
+/* LOGIN PAGE */
+
+.login-container {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+.login-box {
+    background-color: white;
+
+    width: 100%;
+    max-width: 400px;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+
+    text-align: center;
+}
+
+.login-box h1 {
+    margin-bottom: 10px;
+}
+
+.login-box h2 {
+    margin-bottom: 10px;
+}
+
+.login-box > p {
+    margin-bottom: 25px;
+}
+
+.login-box form {
+    text-align: left;
+}
+
+.login-box label {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-weight: bold;
+}
+
+.login-box input {
+    width: 100%;
+
+    padding: 12px;
+
+    margin-bottom: 20px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+}
+
+.login-box button {
+    width: 100%;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background-color: #6c63ff;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.login-box button:hover {
+    opacity: 0.9;
+}
+
+#loginMessage {
+    margin-top: 15px;
+
+    text-align: center;
+
+    font-weight: bold;
+}
+
+.back-home {
+    margin-top: 20px;
+}
+
+.back-home a {
+    text-decoration: none;
+
+    color: #6c63ff;
+
+    font-weight: bold;
+}
+/* ================================
+   DASHBOARD
+================================ */
+
+.dashboard {
+    padding: 50px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.welcome {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.welcome h2 {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.welcome p {
+    font-size: 18px;
+}
+
+
+/* Player information */
+
+.player-info {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.info-card {
+    background-color: white;
+
+    width: 200px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    border-radius: 15px;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.info-card h3 {
+    margin-bottom: 10px;
+}
+
+.info-card p {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+/* Dashboard options */
+
+.dashboard-options {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+.dashboard-card {
+    background-color: white;
+
+    padding: 35px;
+
+    text-align: center;
+
+    border-radius: 15px;
+
+    text-decoration: none;
+
+    color: #333;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+    transition: transform 0.2s;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+}
+
+.dashboard-card h3 {
+    font-size: 25px;
+
+    margin-bottom: 10px;
+}
+
+.dashboard-card p {
+    font-size: 16px;
+}
+/* ================================
+   GAMES PAGE
+================================ */
+
+.games-page {
+    padding: 50px 20px;
+
+    max-width: 1000px;
+
+    margin: auto;
+}
+
+.games-intro {
+    text-align: center;
+
+    margin-bottom: 40px;
+}
+
+.games-intro h2 {
+    font-size: 35px;
+
+    margin-bottom: 10px;
+}
+
+.game-card {
+    background-color: white;
+
+    max-width: 600px;
+
+    margin: auto;
+
+    padding: 40px;
+
+    text-align: center;
+
+    border-radius: 20px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.game-card h2 {
+    font-size: 30px;
+
+    margin-bottom: 10px;
+}
+
+.question {
+    margin: 30px 0;
+}
+
+.question h3 {
+    font-size: 35px;
+}
+
+.answers {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+.answer-button {
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background-color: #6c63ff;
+
+    color: white;
+
+    font-size: 18px;
+
+    cursor: pointer;
+}
+
+.answer-button:hover {
+    opacity: 0.9;
+}
+
+#gameMessage {
+    margin: 25px 0;
+
+    font-size: 18px;
+
+    font-weight: bold;
+}
+
+#gamePoints {
+    font-weight: bold;
+
+    font-size: 20px;
+}
+/* ================================
+   ANSWER FEEDBACK
+================================ */
+
+/* Wrong answer */
+.answer-button.wrong {
+    background-color: #ff4d4d;
+}
+
+/* Correct answer */
+.answer-button.correct {
+    background-color: #32cd70;
+}
+
+
+/* ================================
+   BALLOONS
+================================ */
+
+#balloonContainer {
+    position: relative;
+    height: 0;
+    overflow: visible;
+    pointer-events: none;
+}
+
+.balloon {
+    position: absolute;
+    bottom: 0;
+    width: 25px;
+    height: 32px;
+    border-radius: 50%;
+    animation: balloonPop 1.5s ease-out forwards;
+}
+
+.balloon::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 35px;
+    background-color: #555;
+    top: 30px;
+    left: 12px;
+}
+
+@keyframes balloonPop {
+
+    0% {
+        transform: translateY(0) scale(0.5);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-150px) scale(1);
+        opacity: 0;
+    }
+
+}
+/* ================================
+   MEMORY GAME
+================================ */
+
+.memory-page {
+    padding: 50px 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.memory-intro {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.memory-intro h2 {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.memory-card {
+    background-color: white;
+    max-width: 650px;
+    margin: auto;
+    padding: 35px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Memory board */
+
+.memory-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    max-width: 500px;
+    margin: 30px auto;
+}
+
+
+/* Memory cards */
+
+.memory-button {
+    height: 100px;
+    border: none;
+    border-radius: 15px;
+    background-color: #6c63ff;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.memory-button:hover {
+    transform: scale(1.05);
+}
+
+
+/* Open card */
+
+.memory-button.open {
+    background-color: #f1f1f1;
+    color: #333;
+}
+
+
+/* Matched card */
+
+.memory-button.matched {
+    background-color: #32cd70;
+    color: white;
+}
+
+
+/* Message */
+
+#memoryMessage {
+    font-size: 18px;
+    font-weight: bold;
+    min-height: 25px;
+}
+
+
+/* Points */
+
+.memory-points {
+    font-size: 18px;
+}
+
+#memoryPoints {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+/* Restart button */
+
+#restartMemory {
+    margin-top: 15px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    background-color: #6c63ff;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#restartMemory:hover {
+    opacity: 0.9;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .memory-board {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+    }
+
+    .memory-button {
+        height: 75px;
+        font-size: 30px;
+    }
+
+}
+/* ================================
+   GAMES MENU
+================================ */
+
+.games-page {
+    padding: 50px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.games-intro {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.games-intro h2 {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.games-intro p {
+    font-size: 18px;
+}
+
+
+/* Games container */
+
+.games-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 850px;
+    margin: auto;
+}
+
+
+/* Individual game */
+
+.game-choice {
+    background-color: white;
+    padding: 35px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+
+/* Hover effect */
+
+.game-choice:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Game icon */
+
+.game-icon {
+    font-size: 70px;
+    margin-bottom: 15px;
+}
+
+
+/* Game title */
+
+.game-choice h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+
+/* Game description */
+
+.game-choice p {
+    font-size: 16px;
+    line-height: 1.6;
+    min-height: 75px;
+}
+
+
+/* Play button */
+
+.play-button {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding: 14px 30px;
+
+    border-radius: 12px;
+
+    background-color: #6c63ff;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+
+.play-button:hover {
+    transform: scale(1.05);
+
+    opacity: 0.9;
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .games-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+/* ================================
+   HOMEWORK PAGE
+================================ */
+
+.homework-page {
+    padding: 50px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+
+/* Introduction */
+
+.homework-intro {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.homework-intro h2 {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.homework-intro p {
+    font-size: 18px;
+}
+
+
+/* Homework cards */
+
+.homework-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+/* Icon */
+
+.homework-icon {
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+
+/* AI Search */
+
+.ai-search {
+    max-width: 700px;
+    margin: 25px auto;
+}
+
+
+.ai-search textarea {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 15px;
+
+    border: 2px solid #ddd;
+    border-radius: 12px;
+
+    font-size: 16px;
+
+    resize: vertical;
+
+    font-family: Arial, sans-serif;
+}
+
+
+.ai-search textarea:focus {
+    outline: none;
+    border-color: #6c63ff;
+}
+
+
+/* Search button */
+
+#askAIButton {
+    margin-top: 15px;
+
+    padding: 14px 35px;
+
+    border: none;
+    border-radius: 12px;
+
+    background-color: #6c63ff;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+#askAIButton:hover {
+    opacity: 0.9;
+}
+
+
+/* AI Answer */
+
+.ai-answer {
+    max-width: 700px;
+
+    margin: 25px auto 0;
+
+    padding: 20px;
+
+    background-color: #f5f5ff;
+
+    border-radius: 15px;
+
+    text-align: left;
+
+    min-height: 80px;
+}
+
+
+.ai-answer h3 {
+    margin-top: 0;
+}
+
+
+/* Upload cards */
+
+.upload-container {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 30px;
+}
+
+
+.upload-card {
+    margin-bottom: 0;
+}
+
+
+/* Daily limits */
+
+.upload-limit {
+    margin: 20px 0;
+
+    font-size: 17px;
+}
+
+
+.upload-limit strong {
+    font-size: 20px;
+}
+
+
+/* Upload button */
+
+.upload-button {
+    padding: 13px 25px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background-color: #6c63ff;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.upload-button:hover {
+    opacity: 0.9;
+}
+
+
+/* Uploaded files */
+
+.file-preview {
+    margin-top: 20px;
+
+    text-align: left;
+}
+
+
+.file-preview p {
+    background-color: #f5f5f5;
+
+    padding: 10px;
+
+    border-radius: 8px;
+
+    margin: 5px 0;
+}
+
+
+/* Homework tip */
+
+.homework-tip {
+    background-color: white;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+
+    margin-top: 30px;
+}
+
+
+.homework-tip h3 {
+    margin-top: 0;
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .upload-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+ /* =========================================
+   KIDLEARNINGAPP REWARDS
+========================================= */
+
+.rewards-page {
+    max-width: 1200px;
+    margin: auto;
+    padding: 35px 20px;
+}
+
+
+/* =========================================
+   WELCOME
+========================================= */
+
+.bunny-welcome {
+    background: white;
+    border-radius: 20px;
+    padding: 18px 25px;
+    margin-bottom: 25px;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.mini-bunny {
+    font-size: 55px;
+}
+
+.bunny-welcome h2 {
+    margin: 0 0 5px;
+}
+
+.bunny-welcome p {
+    margin: 0;
+}
+
+
+/* =========================================
+   MAIN REWARD LAYOUT
+========================================= */
+
+.reward-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 30px;
+    align-items: stretch;
+}
+
+
+/* =========================================
+   BUNNY DISPLAY
+========================================= */
+
+.bunny-display {
+    position: relative;
+
+    min-height: 600px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #eee8ff,
+            #fff5fb
+        );
+
+    border-radius: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    padding-bottom: 40px;
+
+    overflow: hidden;
+}
+
+
+/* Speech bubble */
+
+.speech-bubble {
+    position: absolute;
+
+    top: 35px;
+    left: 25px;
+
+    background: white;
+
+    padding: 18px 22px;
+
+    border-radius: 20px;
+
+    max-width: 190px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.1);
+}
+
+
+/* =========================================
+   REALISTIC 3D REWARD BUNNY
+========================================= */
+
+.bunny-display {
+    position: relative;
+
+    min-height: 650px;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            #ffffff 0%,
+            #f5edff 45%,
+            #e8d9ff 100%
+        );
+
+    border-radius: 30px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-end;
+
+    padding-bottom: 25px;
+
+    overflow: hidden;
+}
+
+
+/* Soft floor */
+
+.bunny-display::after {
+    content: "";
+
+    position: absolute;
+
+    width: 320px;
+    height: 70px;
+
+    bottom: 25px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(100, 60, 180, 0.20),
+            transparent 70%
+        );
+
+    border-radius: 50%;
+}
+
+
+/* =========================================
+   BUNNY CONTAINER
+========================================= */
+
+.realistic-bunny {
+
+    position: relative;
+
+    width: 420px;
+
+    height: 600px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-end;
+
+    z-index: 2;
+
+    transition:
+        transform 0.5s ease;
+}
+
+
+/* =========================================
+   REALISTIC BUNNY IMAGE
+========================================= */
+
+#bunnyImage {
+
+    position: absolute;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    object-position: center bottom;
+
+    z-index: 2;
+
+    filter:
+        drop-shadow(
+            0 18px 15px
+            rgba(0,0,0,0.18)
+        );
+
+    transition:
+        transform 0.4s ease,
+        filter 0.4s ease;
+}
+
+
+/* =========================================
+   BUNNY GLOW
+========================================= */
+
+.bunny-glow {
+
+    position: absolute;
+
+    width: 280px;
+
+    height: 280px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.9),
+            rgba(220,190,255,0.35),
+            transparent 70%
+        );
+
+    top: 160px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 0;
+
+    filter: blur(10px);
+}
+
+
+/* =========================================
+   WARDROBE LAYERS
+========================================= */
+
+.bunny-layer {
+
+    position: absolute;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    object-position: center bottom;
+
+    pointer-events: none;
+
+    z-index: 5;
+
+    filter:
+        drop-shadow(
+            0 8px 8px
+            rgba(0,0,0,0.15)
+        );
+}
+
+
+/* =========================================
+   BUNNY ANIMATION
+========================================= */
+
+.realistic-bunny:hover #bunnyImage {
+
+    transform:
+        translateY(-8px)
+        scale(1.02);
+
+    filter:
+        drop-shadow(
+            0 20px 20px
+            rgba(0,0,0,0.20)
+        );
+}
+
+
+/* Small breathing animation */
+
+@keyframes bunnyBreathing {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-4px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+
+#bunnyImage {
+
+    animation:
+        bunnyBreathing 3s ease-in-out infinite;
+}
+
+
+/* =========================================
+   SPEECH BUBBLE
+========================================= */
+
+.speech-bubble {
+
+    position: absolute;
+
+    top: 35px;
+
+    left: 25px;
+
+    background: white;
+
+    padding: 18px 22px;
+
+    border-radius: 22px;
+
+    max-width: 220px;
+
+    font-weight: bold;
+
+    color: #35209b;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,0.12);
+
+    z-index: 10;
+
+    border: 2px solid #eee5ff;
+}
+
+
+.speech-bubble::after {
+
+    content: "";
+
+    position: absolute;
+
+    bottom: -15px;
+
+    left: 35px;
+
+    width: 25px;
+
+    height: 25px;
+
+    background: white;
+
+    transform: rotate(45deg);
+
+    border-right: 2px solid #eee5ff;
+
+    border-bottom: 2px solid #eee5ff;
+}
+
+
+/* =========================================
+   REALISTIC BUNNY RESPONSIVE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .bunny-display {
+
+        min-height: 550px;
+
+    }
+
+    .realistic-bunny {
+
+        width: 330px;
+
+        height: 500px;
+
+    }
+
+    .speech-bubble {
+
+        left: 10px;
+
+        top: 20px;
+
+        max-width: 160px;
+
+        font-size: 14px;
+
+    }
+
+}

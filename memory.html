@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Memory Match - Learn & Play</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+
+        <h1>🌟 Learn & Play</h1>
+
+        <nav>
+            <a href="games.html">Games</a>
+            <a href="dashboard.html">Dashboard</a>
+        </nav>
+
+    </header>
+
+
+    <!-- Memory Game -->
+    <main class="memory-page">
+
+        <section class="memory-intro">
+
+            <h2>🧠 Memory Match</h2>
+
+            <p>
+                Find the matching pairs!
+            </p>
+
+        </section>
+
+
+        <section class="memory-card">
+
+            <h3>Match the Cards 🎯</h3>
+
+            <p id="memoryMessage">
+                Tap two cards to find a match.
+            </p>
+
+
+            <!-- Cards -->
+            <div id="memoryBoard" class="memory-board">
+            </div>
+
+
+            <!-- Points -->
+            <p class="memory-points">
+                ⭐ Points:
+                <span id="memoryPoints">0</span>
+            </p>
+
+
+            <!-- Restart -->
+            <button id="restartMemory">
+                🔄 New Game
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>Rewards - KidLearningAPP</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+    /* Bunny celebration */
+.realistic-bunny.bunny-celebrate {
+    animation: bunnyCelebrate 1.2s ease-in-out;
+}
+
+@keyframes bunnyCelebrate {
+    0% {
+        transform: translateY(0) rotate(0deg) scale(1);
+    }
+
+    20% {
+        transform: translateY(-30px) rotate(-6deg) scale(1.05);
+    }
+
+    40% {
+        transform: translateY(-50px) rotate(6deg) scale(1.08);
+    }
+
+    60% {
+        transform: translateY(-30px) rotate(-5deg) scale(1.05);
+    }
+
+    80% {
+        transform: translateY(-10px) rotate(4deg) scale(1.02);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg) scale(1);
+    }
+}
+    /* Bunny idle animation */
+.realistic-bunny {
+    animation: bunnyIdle 3s ease-in-out infinite;
+    transform-origin: center bottom;
+}
+
+/* Gentle breathing / floating */
+@keyframes bunnyIdle {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-6px) scale(1.01);
+    }
+}
+
+/* Bunny jump */
+.realistic-bunny.bunny-jump {
+    animation: bunnyJump 0.8s ease;
+}
+
+@keyframes bunnyJump {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+
+    30% {
+        transform: translateY(-45px) scale(1.05);
+    }
+
+    55% {
+        transform: translateY(-55px) scale(1.08);
+    }
+
+    80% {
+        transform: translateY(-15px) scale(1.03);
+    }
+
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+    /* ================================
+       REWARDS PAGE
+    ================================= */
+
+    .rewards-page {
+        max-width: 1200px;
+        margin: auto;
+        padding: 30px 20px 50px;
+    }
+
+    /* Welcome */
+    .bunny-welcome {
+        background: white;
+        border-radius: 25px;
+        padding: 18px 25px;
+        margin-bottom: 25px;
+
+        display: flex;
+        align-items: center;
+        gap: 18px;
+
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .mini-bunny {
+        font-size: 55px;
+    }
+
+    .bunny-welcome h2 {
+        margin: 0 0 5px;
+    }
+
+    .bunny-welcome p {
+        margin: 0;
+    }
+
+
+    /* ================================
+       MAIN REWARD AREA
+    ================================= */
+
+    .reward-layout {
+        display: grid;
+        grid-template-columns: 1fr 1.15fr;
+        gap: 25px;
+        align-items: stretch;
+    }
+
+
+    /* ================================
+       REALISTIC BUNNY DISPLAY
+    ================================= */
+
+    .bunny-display {
+        position: relative;
+
+        min-height: 620px;
+
+        background: linear-gradient(
+            180deg,
+            #eee9ff,
+            #fff4fa
+        );
+
+        border-radius: 30px;
+
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+
+        overflow: hidden;
+
+        padding: 30px;
+    }
+
+    .speech-bubble {
+        position: absolute;
+
+        top: 30px;
+        left: 25px;
+
+        max-width: 210px;
+
+        background: white;
+
+        padding: 16px 20px;
+
+        border-radius: 20px;
+
+        font-weight: bold;
+
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+
+        z-index: 5;
+    }
+
+    .speech-bubble::after {
+        content: "";
+
+        position: absolute;
+
+        bottom: -10px;
+        left: 35px;
+
+        width: 20px;
+        height: 20px;
+
+        background: white;
+
+        transform: rotate(45deg);
+    }
+
+
+    /* REAL BUNNY IMAGE */
+
+    .realistic-bunny {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+
+        position: relative;
+
+        transition: transform 0.5s ease;
+    }
+
+    #bunnyImage {
+        width: 90%;
+        max-width: 450px;
+
+        max-height: 570px;
+
+        height: auto;
+
+        object-fit: contain;
+
+        display: block;
+
+        filter:
+            drop-shadow(
+                0 18px 15px
+                rgba(0,0,0,0.16)
+            );
+
+        transition:
+            transform 0.5s ease,
+            filter 0.3s ease;
+    }
+
+
+    /* ================================
+       POINTS CARD
+    ================================= */
+
+    .reward-info-card {
+        background: white;
+
+        padding: 30px;
+
+        border-radius: 25px;
+
+        box-shadow:
+            0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    .reward-info-card h2 {
+        margin-top: 0;
+
+        font-size: 28px;
+    }
+
+
+    /* Total points */
+
+    .total-game-points {
+        margin-top: 20px;
+
+        padding: 22px;
+
+        background: #eee9ff;
+
+        border-radius: 20px;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 18px;
+    }
+
+    .total-game-points .star {
+        font-size: 50px;
+    }
+
+    .total-game-points small {
+        display: block;
+        color: #666;
+    }
+
+    .total-game-points strong {
+        display: block;
+
+        font-size: 45px;
+    }
+
+
+    /* Game points */
+
+    .game-points-row {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 15px;
+
+        margin-top: 15px;
+    }
+
+    .game-point-box {
+        padding: 18px;
+
+        border-radius: 18px;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 12px;
+    }
+
+    .math-points {
+        background: #e5f5ff;
+    }
+
+    .memory-points {
+        background: #ffe7f1;
+    }
+
+    .game-point-icon {
+        font-size: 32px;
+    }
+
+    .game-point-box small {
+        display: block;
+    }
+
+    .game-point-box strong {
+        display: block;
+
+        font-size: 24px;
+    }
+
+
+    /* ================================
+       STAGE
+    ================================= */
+
+    .current-stage {
+        margin-top: 20px;
+
+        padding: 20px;
+
+        border: 2px solid #eeeeee;
+
+        border-radius: 18px;
+    }
+
+    .current-stage h3 {
+        margin: 0;
+    }
+
+    #bunnyStageName {
+        display: block;
+
+        font-size: 27px;
+
+        margin-top: 5px;
+    }
+
+    .progress-container {
+        width: 100%;
+
+        height: 20px;
+
+        background: #e5e5e5;
+
+        border-radius: 20px;
+
+        overflow: hidden;
+
+        margin-top: 12px;
+    }
+
+    .progress-fill {
+        width: 0%;
+
+        height: 100%;
+
+        background: #8b63f6;
+
+        border-radius: 20px;
+
+        transition: width 0.5s ease;
+    }
+
+    #progressText {
+        text-align: right;
+
+        font-weight: bold;
+
+        margin-bottom: 0;
+    }
+
+
+    /* ================================
+       WARDROBE
+    ================================= */
+
+    .wardrobe-section {
+        background: white;
+
+        margin-top: 25px;
+
+        padding: 30px;
+
+        border-radius: 25px;
+
+        box-shadow:
+            0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    .wardrobe-title {
+        display: flex;
+
+        align-items: center;
+
+        gap: 15px;
+    }
+
+    .wardrobe-title-icon {
+        font-size: 50px;
+    }
+
+    .wardrobe-title h2 {
+        margin: 0;
+    }
+
+    .wardrobe-title p {
+        margin: 5px 0 0;
+    }
+
+    .wardrobe-heading {
+        margin-top: 30px;
+    }
+
+    .wardrobe-grid {
+        display: grid;
+
+        grid-template-columns:
+            repeat(6, 1fr);
+
+        gap: 15px;
+    }
+
+    .reward-item {
+        border: 2px solid #eeeeee;
+
+        background: #fafafa;
+
+        border-radius: 18px;
+
+        padding: 15px 8px;
+
+        cursor: pointer;
+
+        font-family: inherit;
+
+        transition: 0.2s;
+    }
+
+    .reward-item:hover {
+        transform: translateY(-4px);
+    }
+
+    .reward-item.selected {
+        border-color: #8b63f6;
+
+        background: #eee9ff;
+    }
+
+    .reward-item.locked {
+        opacity: 0.6;
+    }
+
+    .reward-preview {
+        font-size: 45px;
+
+        margin-bottom: 8px;
+    }
+
+    .reward-item strong {
+        display: block;
+    }
+
+    .reward-item small {
+        display: block;
+
+        margin-top: 5px;
+    }
+
+
+    /* ================================
+       GROWTH
+    ================================= */
+
+    .growth-section {
+        margin-top: 25px;
+
+        background: white;
+
+        padding: 30px;
+
+        border-radius: 25px;
+
+        box-shadow:
+            0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    .growth-section h2 {
+        margin-top: 0;
+    }
+
+    .growth-grid {
+        display: grid;
+
+        grid-template-columns:
+            repeat(5, 1fr);
+
+        gap: 15px;
+
+        margin-top: 25px;
+    }
+
+    .growth-card {
+        text-align: center;
+
+        padding: 20px 10px;
+
+        background: #f7f7f7;
+
+        border-radius: 18px;
+    }
+
+    .growth-card .growth-bunny {
+        font-size: 50px;
+    }
+
+    .growth-card strong {
+        display: block;
+
+        margin-top: 8px;
+    }
+
+    .growth-card span {
+        display: block;
+
+        margin-top: 5px;
+
+        font-size: 14px;
+    }
+
+
+    /* ================================
+       BOTTOM MESSAGE
+    ================================= */
+
+    .reward-message {
+        margin-top: 25px;
+
+        padding: 22px;
+
+        background: #eee9ff;
+
+        border-radius: 20px;
+
+        text-align: center;
+    }
+
+    .reward-message .message-bunny {
+        font-size: 40px;
+    }
+
+    .reward-message strong {
+        display: block;
+
+        font-size: 20px;
+    }
+
+
+    /* ================================
+       MOBILE
+    ================================= */
+
+    @media (max-width: 900px) {
+
+        .reward-layout {
+            grid-template-columns: 1fr;
+        }
+
+        .wardrobe-grid {
+            grid-template-columns:
+                repeat(3, 1fr);
+        }
+
+        .growth-grid {
+            grid-template-columns:
+                repeat(3, 1fr);
+        }
+
+    }
+
+
+    @media (max-width: 600px) {
+
+        .bunny-display {
+            min-height: 500px;
+        }
+
+        #bunnyImage {
+            width: 100%;
+        }
+
+        .game-points-row {
+            grid-template-columns: 1fr;
+        }
+
+        .wardrobe-grid {
+            grid-template-columns:
+                repeat(2, 1fr);
+        }
+
+        .growth-grid {
+            grid-template-columns:
+                repeat(2, 1fr);
+        }
+
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<!-- ================================
+     HEADER
+================================= -->
+
+<header>
+
+    <h1>🌟 KidLearningAPP</h1>
+
+    <nav>
+
+        <a href="dashboard.html">
+            🏠 Dashboard
+        </a>
+
+        <a href="games.html">
+            🎮 Games
+        </a>
+
+        <a href="homework.html">
+            📚 Homework
+        </a>
+
+        <a href="rewards.html">
+            🏆 Rewards
+        </a>
+
+        <a href="#" id="logoutButton">
+            🚪 Logout
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ================================
+     MAIN
+================================= -->
+
+<main class="rewards-page">
+
+
+    <!-- WELCOME -->
+
+    <section class="bunny-welcome">
+
+        <div class="mini-bunny">
+            🐰
+        </div>
+
+        <div>
+
+            <h2>
+                My Reward Bunny
+            </h2>
+
+            <p>
+                Keep playing games and earn points
+                to help your bunny grow! ⭐
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================
+         BUNNY + POINTS
+    ================================= -->
+
+    <section class="reward-layout">
+
+
+        <!-- REALISTIC BUNNY -->
+
+        <div class="bunny-display">
+
+            <div
+                class="speech-bubble"
+                id="speechBubble">
+
+                Hi! Let's learn together! 🐰💕
+
+            </div>
+
+
+            <div
+                id="rewardBunny"
+                class="realistic-bunny">
+
+                <img
+                    src="images/bunny-white.png"
+                    alt="My Reward Bunny"
+                    id="bunnyImage"
+                >
+
+            </div>
+
+        </div>
+
+
+
+        <!-- POINTS -->
+
+        <div class="reward-info-card">
+
+            <h2>
+                ⭐ My Rewards
+            </h2>
+
+            <p>
+                Your game points help your bunny
+                grow!
+            </p>
+
+
+            <!-- TOTAL -->
+
+            <div class="total-game-points">
+
+                <span class="star">
+                    ⭐
+                </span>
+
+                <div>
+
+                    <small>
+                        Total Game Points
+                    </small>
+
+                    <strong id="totalGamePoints">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- MATH + MEMORY -->
+
+            <div class="game-points-row">
+
+
+                <div class="game-point-box math-points">
+
+                    <span class="game-point-icon">
+                        🧮
+                    </span>
+
+                    <div>
+
+                        <small>
+                            Math Points
+                        </small>
+
+                        <strong id="mathPointsDisplay">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="game-point-box memory-points">
+
+                    <span class="game-point-icon">
+                        🧠
+                    </span>
+
+                    <div>
+
+                        <small>
+                            Memory Points
+                        </small>
+
+                        <strong id="memoryPointsDisplay">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- STAGE -->
+
+            <div class="current-stage">
+
+                <h3>
+                    🐰 Current Stage
+                </h3>
+
+                <strong id="bunnyStageName">
+                    Baby Bunny
+                </strong>
+
+                <p id="stageDescription">
+                    Your bunny is just getting started!
+                </p>
+
+                <p id="nextStageText">
+                    Next stage: 50 points
+                </p>
+
+
+                <div class="progress-container">
+
+                    <div
+                        id="progressFill"
+                        class="progress-fill">
+                    </div>
+
+                </div>
+
+                <p id="progressText">
+                    0 / 50
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================
+         WARDROBE
+    ================================= -->
+
+    <section class="wardrobe-section">
+
+
+        <div class="wardrobe-title">
+
+            <span class="wardrobe-title-icon">
+                👕
+            </span>
+
+            <div>
+
+                <h2>
+                    My Wardrobe
+                </h2>
+
+                <p>
+                    Unlock new items as you earn
+                    game points!
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- COLOURS -->
+
+        <h3 class="wardrobe-heading">
+            🎨 Bunny Colours
+        </h3>
+
+
+        <div class="wardrobe-grid">
+
+
+            <button
+                class="reward-item selected"
+                data-type="colour"
+                data-value="white"
+                data-cost="0">
+
+                <div class="reward-preview">
+                    🐰
+                </div>
+
+                <strong>
+                    White
+                </strong>
+
+                <small>
+                    OWNED
+                </small>
+
+            </button>
+
+
+
+            <button
+                class="reward-item"
+                data-type="colour"
+                data-value="pink"
+                data-cost="100">
+
+                <div class="reward-preview">
+                    🩷
+                </div>
+
+                <strong>
+                    Pink
+                </strong>
+
+                <small>
+                    🔒 100 ⭐
+                </small>
+
+            </button>
+
+
+
+            <button
+                class="reward-item"
+                data-type="colour"
+                data-value="blue"
+                data-cost="200">
+
+                <div class="reward-preview">
+                    🩵
+                </div>
+
+                <strong>
+                    Blue
+                </strong>
+
+                <small>
+                    🔒 200 ⭐
+                </small>
+
+            </button>
+
+
+
+            <button
+                class="reward-item"
+                data-type="colour"
+                data-value="purple"
+                data-cost="300">
+
+                <div class="reward-preview">
+                    💜
+                </div>
+
+                <strong>
+                    Purple
+                </strong>
+
+                <small>
+                    🔒 300 ⭐
+                </small>
+
+            </button>
+
+
+
+            <button
+                class="reward-item"
+                data-type="colour"
+                data-value="green"
+                data-cost="400">
+
+                <div class="reward-preview">
+                    💚
+                </div>
+
+                <strong>
+                    Green
+                </strong>
+
+                <small>
+                    🔒 400 ⭐
+                </small>
+
+            </button>
+
+
+
+            <button
+                class="reward-item"
+                data-type="colour"
+                data-value="orange"
+                data-cost="500">
+
+                <div class="reward-preview">
+                    🧡
+                </div>
+
+                <strong>
+                    Orange
+                </strong>
+
+                <small>
+                    🔒 500 ⭐
+                </small>
+
+            </button>
+
+        </div>
+
+
+
+        <!-- CLOTHES -->
+
+        <h3 class="wardrobe-heading">
+            👕 Clothes & Accessories
+        </h3>
+
+
+        <div class="wardrobe-grid">
+
+
+            <button
+                class="reward-item"
+                data-type="clothes"
+                data-value="shirt"
+                data-cost="100">
+
+                <div class="reward-preview">
+                    👕
+                </div>
+
+                <strong>
+                    T-Shirt
+                </strong>
+
+                <small>
+                    🔒 100 ⭐
+                </small>
+
+            </button>
+
+
+
+            <button
+                class="reward-item"
+                data-type="clothes"
+                data-value="cap"
+                data-cost="150">
+
+                <div class="reward-preview">
+                    🧢
+                </div>
+
+                <strong>
+                    Cap
+                </strong>
+
+                <small>
+                    🔒 150 ⭐
+                </small>
+
+            </button>
+
+
+
+            <button
+                class="reward-item"
+                data-type="clothes"
+                data-value="glasses"
+                data-cost="200">
+
+                <div class="reward-preview">
+                    👓
+                </div>
+
+                <strong>
+                    Glasses
+                </strong>
+
+                <small>
+                    🔒 200 ⭐
+                </small>
+
+            </button>
+
+
+
+            <button
+                class="reward-item"
+                data-type="clothes"
+                data-value="crown"
+                data-cost="300">
+
+                <div class="reward-preview">
+                    👑
+                </div>
+
+                <strong>
+                    Crown
+                </strong>
+
+                <small>
+                    🔒 300 ⭐
+                </small>
+
+            </button>
+
+
+
+            <button
+                class="reward-item"
+                data-type="clothes"
+                data-value="wings"
+                data-cost="400">
+
+                <div class="reward-preview">
+                    🪽
+                </div>
+
+                <strong>
+                    Angel Wings
+                </strong>
+
+                <small>
+                    🔒 400 ⭐
+                </small>
+
+            </button>
+
+
+
+            <button
+                class="reward-item"
+                data-type="clothes"
+                data-value="graduation"
+                data-cost="600">
+
+                <div class="reward-preview">
+                    🎓
+                </div>
+
+                <strong>
+                    Graduation
+                </strong>
+
+                <small>
+                    🔒 600 ⭐
+                </small>
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================
+         GROWTH STAGES
+    ================================= -->
+
+    <section class="growth-section">
+
+        <h2>
+            🐰 How Your Bunny Grows
+        </h2>
+
+        <p>
+            Earn points from your games to
+            unlock new bunny stages.
+        </p>
+
+
+        <div class="growth-grid">
+
+
+            <div class="growth-card">
+
+                <div class="growth-bunny">
+                    🐰
+                </div>
+
+                <strong>
+                    Baby Bunny
+                </strong>
+
+                <span>
+                    0 - 49 ⭐
+                </span>
+
+            </div>
+
+
+
+            <div class="growth-card">
+
+                <div class="growth-bunny">
+                    🐰
+                </div>
+
+                <strong>
+                    Little Bunny
+                </strong>
+
+                <span>
+                    50 - 149 ⭐
+                </span>
+
+            </div>
+
+
+
+            <div class="growth-card">
+
+                <div class="growth-bunny">
+                    🐰
+                </div>
+
+                <strong>
+                    Young Bunny
+                </strong>
+
+                <span>
+                    150 - 299 ⭐
+                </span>
+
+            </div>
+
+
+
+            <div class="growth-card">
+
+                <div class="growth-bunny">
+                    🐰
+                </div>
+
+                <strong>
+                    Big Bunny
+                </strong>
+
+                <span>
+                    300 - 499 ⭐
+                </span>
+
+            </div>
+
+
+
+            <div class="growth-card">
+
+                <div class="growth-bunny">
+                    👼🐰
+                </div>
+
+                <strong>
+                    Angel Bunny
+                </strong>
+
+                <span>
+                    500+ ⭐
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================
+         MESSAGE
+    ================================= -->
+
+    <section class="reward-message">
+
+        <div class="message-bunny">
+            🐰
+        </div>
+
+        <strong>
+            Keep playing, keep learning! 🌟
+        </strong>
+
+        <p>
+            Your bunny is growing because of you!
+        </p>
+
+    </section>
+
+</main>
+
+
+
+<!-- ================================
+     JAVASCRIPT
+================================= -->
+
+<script src="js/rewards.js"></script>
+```
+
+</body>
+
+</html>
+/* =========================
+   BUNNY CELEBRATION
+========================= */
+
+.realistic-bunny.bunny-celebrate {
+    animation: bunnyCelebrate 1.2s ease-in-out !important;
+}
+
+@keyframes bunnyCelebrate {
+
+    0% {
+        transform: translateY(0) rotate(0deg) scale(1);
+    }
+
+    20% {
+        transform: translateY(-35px) rotate(-8deg) scale(1.05);
+    }
+
+    40% {
+        transform: translateY(-60px) rotate(8deg) scale(1.10);
+    }
+
+    60% {
+        transform: translateY(-35px) rotate(-8deg) scale(1.05);
+    }
+
+    80% {
+        transform: translateY(-10px) rotate(6deg) scale(1.02);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg) scale(1);
+    }
+}

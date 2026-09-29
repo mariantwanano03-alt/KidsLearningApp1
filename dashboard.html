@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard - Learn & Play</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+
+        <h1>🌟 Learn & Play</h1>
+
+        <nav>
+            <a href="dashboard.html">Home</a>
+            <a href="#" id="logoutButton">Logout</a>
+            <a href="homework.html">📚 Homework</a>
+            <a href="rewards.html">🏆 Rewards</a>
+        </nav>
+
+    </header>
+
+
+    <!-- Dashboard -->
+    <main class="dashboard">
+
+        <section class="welcome">
+
+            <h2>
+                👋 Welcome back, <span id="displayUsername"></span>!
+            </h2>
+
+            <p>
+                Ready for your next learning adventure?
+            </p>
+
+        </section>
+
+
+        <!-- Player information -->
+        <section class="player-info">
+
+            <div class="info-card">
+
+                <h3>⭐ Points</h3>
+
+                <p id="displayPoints">0</p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <h3>🚀 Level</h3>
+
+                <p id="displayLevel">1</p>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <h3>🏆 Badges</h3>
+
+                <p>0</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Main options -->
+        <section class="dashboard-options">
+
+            <a href="games.html" class="dashboard-card">
+
+                <h3>🎮 Games</h3>
+
+                <p>
+                    Play fun educational games.
+                </p>
+
+            </a>
+
+
+            <a href="homework.html" class="dashboard-card">
+
+                <h3>📚 Homework</h3>
+
+                <p>
+                    Complete your learning missions.
+                </p>
+
+            </a>
+
+
+            <a href="rewards.html" class="dashboard-card">
+
+                <h3>🏆 Rewards</h3>
+
+                <p>
+                    See your badges and rewards.
+                </p>
+
+            </a>
+
+
+            <div class="dashboard-card">
+
+                <h3>📊 Progress</h3>
+
+                <p>
+                    See how much you have learned.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
