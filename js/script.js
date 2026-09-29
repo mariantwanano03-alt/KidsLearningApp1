@@ -489,7 +489,6 @@ if (memoryBoard) {
             document.getElementById("memoryMessage").textContent =
                 "🧠 Now find the matching pairs!";
 
-
         }, 3000);
 
     }
@@ -698,3 +697,22 @@ if (memoryBoard) {
     );
 
 }
+// ================================
+// HOMEWORK HELPER - AI SEARCH
+// ================================
+
+document.addEventListener("DOMContentLoaded", function() {
+    const askButton = document.getElementById("askAIButton");
+    const questionInput = document.getElementById("homeworkQuestion");
+    const aiAnswerBox = document.getElementById("aiAnswer");
+
+    if (askButton) {
+        askButton.addEventListener("click", function() {
+            const question = questionInput.value.trim();
+
+            if (question === "") {
+                aiAnswerBox.innerHTML = 'Please enter a question.';
+            }
+        });
+    }
+});
