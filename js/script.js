@@ -698,21 +698,75 @@ if (memoryBoard) {
 
 }
 // ================================
-// HOMEWORK HELPER - AI SEARCH
+// HOMEWORK AI SEARCH
 // ================================
 
-document.addEventListener("DOMContentLoaded", function() {
-    const askButton = document.getElementById("askAIButton");
-    const questionInput = document.getElementById("homeworkQuestion");
-    const aiAnswerBox = document.getElementById("aiAnswer");
+const askAIButton =
+    document.getElementById("askAIButton");
 
-    if (askButton) {
-        askButton.addEventListener("click", function() {
-            const question = questionInput.value.trim();
+const homeworkQuestion =
+    document.getElementById("homeworkQuestion");
 
-            if (question === "") {
-                aiAnswerBox.innerHTML = 'Please enter a question.';
-            }
-        });
-    }
-});
+const aiAnswer =
+    document.getElementById("aiAnswer");
+
+
+if (askAIButton) {
+
+    askAIButton.addEventListener("click", function() {
+
+        // Get the question
+        const question =
+            homeworkQuestion.value.trim();
+
+
+        // Check if the child entered a question
+        if (question === "") {
+
+            aiAnswer.innerHTML = `
+                <h3>🤖 AI Answer</h3>
+                <p>❗ Please type a homework question first.</p>
+            `;
+
+            return;
+        }
+
+
+        // Show searching message
+        aiAnswer.innerHTML = `
+            <h3>🤖 AI Answer</h3>
+            <p>🔎 Searching for an answer...</p>
+        `;
+
+
+        // Temporary response
+        setTimeout(function() {
+
+           aiAnswer.innerHTML = `
+    <div class="question-display">
+
+        <h3>📝 Your Question</h3>
+
+        <p>
+            ${question}
+        </p>
+
+    </div>
+
+
+    <div class="answer-display">
+
+        <h3>🤖 AI Answer</h3>
+
+        <p>
+            Your AI explanation will appear here.
+        </p>
+
+    </div>
+`;
+
+        }, 1000);
+
+    });
+
+}
