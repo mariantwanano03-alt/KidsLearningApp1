@@ -696,77 +696,77 @@ if (memoryBoard) {
         }
     );
 
-}
+};
+
+
 // ================================
 // HOMEWORK AI SEARCH
 // ================================
 
-const askAIButton =
-    document.getElementById("askAIButton");
-
-const homeworkQuestion =
-    document.getElementById("homeworkQuestion");
-
-const aiAnswer =
-    document.getElementById("aiAnswer");
-
+const askAIButton = document.getElementById("askAIButton");
+const homeworkQuestion = document.getElementById("homeworkQuestion");
+const aiAnswer = document.getElementById("aiAnswer");
 
 if (askAIButton) {
 
-    askAIButton.addEventListener("click", function() {
+    askAIButton.addEventListener("click", async function () {
 
         // Get the question
-        const question =
-            homeworkQuestion.value.trim();
-
+        const question = homeworkQuestion.value.trim();
 
         // Check if the child entered a question
         if (question === "") {
-
             aiAnswer.innerHTML = `
                 <h3>🤖 AI Answer</h3>
                 <p>❗ Please type a homework question first.</p>
             `;
-
             return;
         }
 
-
-        // Show searching message
+        // Show loading message
         aiAnswer.innerHTML = `
             <h3>🤖 AI Answer</h3>
             <p>🔎 Searching for an answer...</p>
         `;
 
+        try {
 
-        // Temporary response
-        setTimeout(function() {
+            // Send the question to the Vercel backend
+            const response = await fetch("/api/homework", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    question: question
+                })
+            });
 
-           aiAnswer.innerHTML = `
-    <div class="question-display">
+            // Get the response from the backend
+            const data = await response.json();
 
-        <h3>📝 Your Question</h3>
+            // Check if the backend returned an error
+            if (!response.ok) {
+                throw new Error(data.error || "Something went wrong.");
+            }
 
-        <p>
-            ${question}
-        </p>
+            // Display the AI answer
+            aiAnswer.innerHTML = `
+                <h3>🤖 AI Answer</h3>
+                <p>${data.answer}</p>
+            `;
 
-    </div>
+        } catch (error) {
 
+            console.error("AI Homework Error:", error);
 
-    <div class="answer-display">
-
-        <h3>🤖 AI Answer</h3>
-
-        <p>
-            Your AI explanation will appear here.
-        </p>
-
-    </div>
-`;
-
-        }, 1000);
+            aiAnswer.innerHTML = `
+                <h3>🤖 AI Answer</h3>
+                <p>❌ Sorry, we could not get an answer right now.</p>
+                <p>${error.message}</p>
+            `;
+        }
 
     });
 
-}
+};
